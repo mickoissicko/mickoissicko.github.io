@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+
+    <script>
+        function forceReload() {
+            if (!localStorage.getItem('reloadExecuted')) {
+                localStorage.setItem('reloadExecuted', 'true');
+            }
+        }
+        window.onload = forceReload;
+    </script>
+
+    <title>mick's software wiki</title>
+
+    <style>
+        body {
+            font-family: 'Comfortaa', cursive;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .back-button {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            background-color: #ffcc6f;
+            color: #0d0d0d;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 15px;
+            clip-path: circle(15px at 2px 2px);
+        }
+
+        .back-button:hover {
+            background-color: #ffa733;
+        }
+
+        h1,
+        .cool {
+            text-align: center;
+        }
+
+        section {
+            background-color: #ffffff;
+            color: #000;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        pre {
+            background-color: #e1dddd;
+            color: #000;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #000000;
+        }
+
+        section:not(:first-of-type) {
+            margin-top: 40px;
+        }
+
+        .ok {
+            text-align: center;
+        }
+    </style>
+
+    <title>Gelper</title>
+</head>
+
+<body>
+    <button class="back-button" onclick="window.location.href='../wiki'">Back</button>
+
+    <section id="fsafsafsaf">
+        <h1>Gelper</h1>
+        <p class="cool"><em>It's pronounced Gelper and not Jelqer!</em></p>
+        <p class="cool">NOTE: Click the weird, feather-thingy, coloured-orange, on the top-left of the page to go back.
+        </section>
+
+        <section>
+            <h2>Pronunciation</h2>
+            <p>
+                Before using Gelper, you should know how to pronounce it, right? Here's the correct
+                pronunciation versus the incorrect pronunciation:
+                <p>
+                <li><b>Correct: </b><em>Gell-per</em></li>
+                <li><b>Incorrect: </b><em>Jell-qer</em></li>
+                <li><b>Incorrect: </b><em>Jell-per</em></li>
+                <p>
+                    Yes! Jelper and <a href="https://www.healthline.com/health/jelqing">Jelqer</a>
+                     are both incorrect pronunciations!
+                     <p>
+                        <b>P.S. Don't click the hyperlink on 'Jelqer'</b>
+                     </p>
+                </p>
+                </p>
+            </p>
+        </section>
+
+        <section>
+            <h2>Requirements</h2>
+            <p>
+                You need a <a href="https://github.com">Github</a> account, 
+                a Github repository, and <a href="https://git-scm.com/downloads">Git SCM.</a>
+            </p>
+            <p>
+                Make sure to correctly
+                <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">
+                configure Git</a>.
+            </p>
+            <p>
+                Now, download <a href="https://github.com/mickoissicko/githelper/releases">Gelper</a>
+            </p>
+        </section>
+
+        <section>
+            <h2>'/?' or 'list-flags'</h2>
+            <p>
+                Shows a list of available flags.
+            </p>
+        </section>
+
+        <section>
+            <h2>The '--f' flag</h2>
+            <p>
+                This will 'pull' all the changes from your Github repository (make sure)
+                you are in its parent folder.
+            </p>
+            <p>
+                After pulling, it will merge and rebase, then update refs.
+            </p>
+            <p>
+                Now you can commit and push without conflict (if there was a merge conflict!)
+            </p>
+        </section>
+
+        <section>
+            <h2>Multi Start</h2>
+            <p>
+                This is like the QS (Quick-start) feature, but buffed. MS allows you to commit and add
+                multiple files in one line. Or add multiple files with a single commit message.
+            </p>
+<code><pre>
+gelper2 --m dir/file1.txt dir/new_name.out :: "rename 'dir/file1.txt' -> 'dir/new_name.out'"
+</code></pre>
+            <p>
+                And this will commit with that message for both files.
+            </p>
+        </section>
+
+        <section>
+            <h2>Quick Start</h2>
+            <p>
+                In the new and improved, latest Gelper2 was added the Quick Start (QS) feature.
+            </p>
+            <p>
+                The QS feature made other features such as configuration redundant, ergo those have
+                been deprecated. Please download '1.1.0 stable' if you wish to use the Legacy Gelper.
+            </p>
+            <p>
+                The QS feature enables you to quickly add and commit files. You need to
+                use the QS mode via the '--q' flag. Here's how:
+<code><pre>
+gelper2 --q 'filename.extension' :: "message to commit to github repo"
+</code></pre>
+            </p>
+            <p>
+                The syntax looks amazing. Version 2.0.1 is expected to replace the double-colon
+                to something like '|>' or '--'.
+            </p>
+            <p>
+                Anyways, the 'filename.extension' should be the path to your file. Here's how
+                it would look if you were adding 'file.c' in 'src/files/c/'.
+            </p>
+<code><pre>
+gelper2 --q 'src/files/c/file.c' :: "Add C file -- file.c"
+</code></pre>
+            <p>
+                Other than this, you can use '!push' at the end to automatically push all
+                staged commits. Here's how that would look:
+            </p>
+<code><pre>
+gelper2 --q 'src/files/c/file.c' :: "Add C file -- file.c" !push
+</code></pre>
+        </section>
+
+        <section>
+            <h2>Automatic Repository Cloning</h2>
+            <p>
+                Gelper has a feature to enable automatic cloning, as in you do not need to enter the whole
+                'githubusername/repositoryname'. Instead, you can only type in the repository name, and,
+                depending on the config, it will fill in the username for you.
+            </p>
+            <p>
+                Here's how:
+            </p>
+<code><pre>
+gelper2 --global-user GithubUsername
+</code></pre>                         
+           <p>
+                Now, whenever you type '--dc', or '--dc-ng', it will automatically use 'GithubUsername'.
+                Remember to replace 'GithubUsername' with your actual username.
+            </p>
+            <p>
+                Because mine is 'mickoissicko,' I will use 'mickoissicko'. Now, if I:
+            </p>
+<code><pre>
+gelper2 --dc githelper
+</code></pre>
+
+            <p>
+                  Let's say you want to copy an external repository <b>without</b>
+                  removing your configuration (can be done via --reset.)
+            </p>
+            <p>
+                  Here's an example:
+            </p>
+<code><pre>
+gelper2 --fc username/repository
+</code></pre>
+
+            <p>
+                  This will clone 'username/repository'. (Use the real ones.)
+                  And same goes for '--fc-ng,' which does it without the '.git' tag.
+            </p>
+
+        </section>
+
+        <section>
+            <h2>Cloning Reserved Repositories</h2>
+            <p>
+                Github has repositories such as '.github.io' or 'usr' which are special.
+            </p>
+            <p>
+                They allow you to host your own website, or add a README to your profile.
+                However, Gelper (from 2.2.5+) now has a feature for avoiding repetition
+                and cloning these with ease!
+            </p>
+            <p>
+                And yes, you can make use of the configuration file! (To clone automatically.)
+            </p>
+            <p>
+                Associated flags:
+                <li>--cgp, --ccgp</li>
+                <li>--cga, --ccga</li>
+                <p>
+                    CGP means Clone Github Pages, CCGP means Custom-Clone Github Pages.
+                </p>
+                <p>
+                    CCGP allows you to manually specify username (if you do have a
+                    .gelper/config.txt file and you do not want to delete it).
+                </p>
+                <p>
+                    CGA means Clone Github About. CCGA, similarly, means Custom-Clone Github About.
+                    Same usage as above.
+                </p>
+            </p>
+            <p>
+                Assuming you have '--global-user' set:
+            </p>
+<code><pre>
+gelper2 --cga
+</pre></code>
+            <p>
+                And if you do not:
+            </p>
+<code><pre>
+gelper2 --cga mickoissicko
+</pre></code>
+            <p>
+                See. It makes it better: you only need to type your username!
+            </p>
+            <p>
+                CGA for about, CGP for website!
+            </p>
+            <p>
+                Here's a CCGP or CCGA demonstration:
+            </p>
+<code><pre>
+gelper2 --ccgp random_guy69
+</pre></code>
+            <p>
+                Remember: CCGP or CCGA (should) be used if you have the 'config.txt' file, or
+                '--global-user' set to a username! Otherwise, use CGA/CGP to clone manually.
+                Why type extra letters when there is no need?!
+            </p>
+        </section>
+
+        <section>
+            <h2>Cloning (without configuration)</h2>
+            <p>
+                Gelper, quite like Git, can easily (now) in v2.1.4 do most of the things Git does.
+                Out of those, the most prominent are cloning, committing, and pushing!
+            </p>
+            <p>
+                Start Gelper with '--c' to clone. It displays a prompt. In it, enter your Github
+                username, and the repository name (not link!!).
+            </p>
+            <p>
+                You can also use '--dc' to directly clone. This one does not display the prompt.
+                Instead, you can use it like:
+<code><pre>
+gelper2 --dc mickoissicko/githelper
+</pre></code>
+                <p>
+                    And that will clone the 'githelper' repository.
+                </p>
+            </p>
+            <p>
+                You can also use '--dc-ng' to truncate '.git' from the repository link.
+                This will clone only the repository without the '.git' extension in the end.
+            </p>
+<code><pre>
+gelper2 --dc-ng mickoissicko/githelper
+</pre></code>
+        </section>
+
+        <section>
+            <h2>Archlinux User Repository</h2>
+            <p>
+                Gelper (natively) supports the AUR. And will support other repositories like the AUR
+                soon! To utilise this feature, you can run Gelper with '--aur'.
+            </p>
+            <p>
+                Again, just using the '--aur' flag will display a prompt 'Software:' and you
+                would have to specify the software name, like 'sharexin.'
+            </p>
+            <p>
+                It operates in the '/home/USER/aur.gelper_tmp/' directory, deleted upon exit
+                unless you append '-nc', like '--aur-nc,' which doesn't delete upon exit, meaning
+                you can rebuild later.
+            </p>
+            <p>
+                Other than that, you can use the '--daur' flag. Which <b>directly</b> builds
+                software from the AUR. Remember: you need a working 'makepkg.'
+            </p>
+<code><pre>
+gelper2 --daur sharexin
+</pre></code>
+            <p>
+                This copies 'sharexin' (a software in the AUR,) builds it, then deletes the
+                temporary directory upon exit.
+            </p>
+<code><pre>
+gelper2 --daur-nc sharexin
+</pre></code>
+            <p>
+                This copes 'sharexin', builds it, but leaves the build files and the directory, meaning
+                if you run the above command again, it will check for the software, and ask you
+                if you want to rebuild it.
+            </p>
+            <p>
+                If you have trouble with '--daur' // '--daur-nc', add '-ng' to the flag. For example:
+<code><pre>
+gelper2 --daur-ng-nc sharexin
+</pre></code>
+                This builds 'sharexin,' and leaves the temporary directory undeleted.
+<code><pre>
+gelper2 --daur-ng sharexin
+</pre></code>
+                This deletes the temporary directory upon exit.
+            </p>
+            <p>
+                The '-ng' flag truncates the '.git' from an AUR link at the end. It's added as an
+                alternative to building with '.git' from the AUR.
+            </p>
+        </section>
+
+        <section>
+            <h2>Flags</h2>
+            <p>
+                Gelper uses command-line arguments (commonly called 'flags'), to determine how you want
+                to execute it.
+            </p>
+            <b>Advantages:</b>
+            <p>
+                <li>Easier</li>
+                <li>Minimal setup</li>
+                <li>Minimal configuration</li>
+                <li>No need for extra files like '.githelper' or 'cfg/pref.yml'</li>
+            </p>
+            <p>
+                There are two flags at the moment: '--d' and '--k'. You can't really tell what they do
+                but let me explain:
+                <h3>'--d' flag</h3>
+                <p>
+                    The '--d' flag stands for 'detached'. It runs Gelper in a new session, meaning:
+                    <li>Direct launch</li>
+                    <li>No configuration</li>
+                </p>
+                <p>
+                    When running Gelper, 'addfiles' and 'commit' will be created if they do not exist.
+                    You will be prompted for their creation. In the end, both of the files will be
+                    removed. Use '--k', or 'keepfile' to keep those files; to not remove them.
+                </p>
+                <p>
+                    After making the files and including commit info etc. you will be prompted if
+                    you want to push these changes after the program processes the files, adds
+                    to git, and commits. You can select either 'y' for yes or 'n' for no.
+                </p>
+            </p>
+            <p>
+                <h3>'--k' flag</h3>
+                <p>
+                    '--k' stands for 'keep files'. You can add it after '--d' so the program
+                    doesn't auto-delete 'addfiles' and 'commit' files after adding/committing. 
+                </p>
+            </p>
+        </section>
+
+        <section>
+            <h2>Setting an alias</h2>
+            <p>
+                Configuration is very, very easy. Gelper utilises the human-friendly data-serialisation
+                YAML format!
+            </p>
+            <p>
+                To start off, make an alias for Gelper. Here's how:
+            </p>
+            <p>
+                On Windows, edit the Path system environment variable, and add the Gelper executable path,
+                without the executable. Now you can run Gelper with 'gelper' or whatever the name of the
+                executable is.
+            </p>
+            <p>
+                On Linux, open your DOT Shell file. I use the Fish shell, so for me it would be:
+                '~/.config/fish/config.fish'. Anyways, add this line in the configuration file:
+            </p>
+<code><pre>
+alias gelper="/path/to/gelper/executable/file"
+</pre></code>
+            <p>
+                That path has to be absolute. Why absolute? To save you pain. Here's why:
+<code><pre>
+alias gelper="../../path/to/gelper/executable/file"
+</pre></code>
+<p>
+    But if you do not want to do that, you can just place the executable in the location of your
+    DOT Files, and easily do:
+</p>
+<code><pre>
+alias gelper="gelper"
+</pre></code>
+<p>
+    And remember, it has to be the executable's full name, extensions matter. Let's say it is named
+    'gelper.bin', then it would be 'gelper.bin'. It is also case-sensitive.
+</p>
+<p>
+    Anyways, replace the 'path/to/gelper/executable/file' with the path to the executable. You can place
+    yours in '~/Documents/executables/gelper', and set that as the path. 
+    <p>To avoid conflicts, remove
+    the tilde, and append (instead) '/home/USERNAME', where the USERNAME <b>(case-sensitive)</b>, is
+    the username of your Linux PC.</p>
+</p>
+            </p>
+        </section>
+
+        <section>
+            <h2>Cleaning</h2>
+            <p>
+                  You can delete the configuration files via the '--reset' flag.
+            </p>
+            <p>
+                  You can remove the AUR temporary folder (which is not deleted if
+                  you use the 'nc' [noclean] option) via the '--clean' flag.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="cool">Deprecation notice</h2>
+            <p class="cool"><b><em>Please note: the below guide is deprecated
+                and for version 1.1.0 or 1.1.1-stable!
+            </em></b></p>
+        </section>
+
+        <section>
+            <h2>Configuration</h2>
+            <p>
+                <b>Remember</b>: <em>Gelper must be run inside a Github repository!</em>
+            </p>
+            <p>
+                Starting off, navigate to the folder where the executable is stored, and run this
+                command:
+<code><pre>
+gelper -cfg
+</pre></code>
+                <p>
+                    That command will generated a YAML configuration file with the name 'pref.yml'.
+                </p>
+            </p>
+            <p>
+                Now, open 'pref.yml' and the contents of it should look like this:
+<code><pre>
+# By default, some flags are true/false
+MakeFiles: True
+Cleanup: True
+AutoPush: Off
+# The AutoPush flag pushes the changes automatically in the end
+#
+# Change the value of MakeFiles to false if: 
+# You do not want the program to automatically make 'commit' and 'addfiles' files
+# Change it to true if you do want that behaviour
+#
+# The cleanup flag just deletes those files upon exit
+</pre></code>
+            </p>
+            <p>
+                Read the comments. They should give you an idea of how to use it.
+                Remember, it is case-sensitive, so 'True' has to be exactly 'True' or 'False', and
+                not 'true' or 'false'. Similarly, you can't see 'Off' to 'True'. It has to be 'On'.
+            </p>
+            <p>
+                The MakeFiles flag automatically generates the 'commit' and 'addfiles' files, whereas
+                if it were 'False', then it would not generate those files, and instead, you'd be
+                prompted for their creation. You can choose no and manually create them.
+            </p>
+            <p>
+                The Cleanup flag, as said in the comments, deletes those files upon exit.
+            </p>
+            <p>
+                The AutoPush flag automatically pushes your changes to Github when you are done
+                editing and press 'Y' in the prompt.
+            </p>
+            <p>
+                It is Off by default to avoid any rash decisions. If 'Off', then Gelper prompts you
+                if you want to push changes or no. You can select 'n' as no, and push those changes
+                later after reviewing them (if you really want to).
+            </p>
+        </section>
+
+        <section>
+            <h2>Commit & Addfiles</h2>
+            <p>
+                When you start Gelper, and if the MakeFiles flag is 'True' it will make two files:
+                <b><em>commit</em></b> and <b><em>addfiles</em></b>.
+                <p>
+                    If the flag is 'False', then you will be prompted for their creation. If you select
+                    no, then you can manually create them later.
+                </p>
+            </p>
+            <p>
+                In the <em><b>commit</b></em> file, you can specify the message for each file
+                you will be committing.
+            </p>
+            <p>
+                In the <em><b>addfiles</b></em> file, you can specify which files you want to stage
+                for commit.
+            </p>
+        </section>
+
+        <section>
+            <h2>An example</h2>
+            <p>
+                Let's say you run Gelper in the Github repository you wish to edit.
+                Make sure to run it in the root folder to avoid relative paths or having to add paths
+                like '../files/a_file.ext'.
+            </p>
+            <p>
+                Anyways, let's say you want to add these files to the Github repository:
+                <p>
+                    <li>MyFile.txt</li>
+                    <li>HisFile.txt</li>
+                    <li>OurFile.communism</li>
+                    <li>TheirFile.saddness</li>
+                </p>
+            </p>
+            <p>
+                Here's how you would do that. Given that you've run Gelper, and the 'commit'
+                and 'addfiles' files have been created, you can start by editing
+                'addfiles' first:
+            </p>
+<code><pre>
+MyFile.txt
+HisFile.txt
+OurFile.communism
+TheirFile.saddness
+</pre></code>
+            <p>
+                Now, let's edit the 'commit' file:
+            </p>
+<code><pre>
+Added my file
+Added his file
+Added our file
+Added their file
+</pre></code>
+            <p>
+                Gelper avoids the unnessescary jargon. Remember, line numbers matter. Here's what 
+                I mean:
+                <p>
+                    addfiles: On Line 1, we added 'MyFile.txt'.
+                </p>
+                <p>
+                    commit: On Line 1, we added the message for 'MyFile.txt'. 
+                </p>
+            </p>
+            <p>
+                So yes, no need to specify filename in 'commit'. Makes workflow fast!
+            </p>
+        </section>
+
+    </body>
+</html>
