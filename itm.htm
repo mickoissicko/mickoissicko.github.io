@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITM Time</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .DialRow {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    .DialWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .Dial {
+      width: 180px;
+      height: 180px;
+      border: 8px solid #444;
+      border-radius: 50%;
+      position: relative;
+      background: #1e1e1e;
+    }
+
+    .Hand {
+      position: absolute;
+      width: 2px;
+      height: 70px;
+      background-color: #ffcc00;
+      top: 20px;
+      left: 50%;
+      transform-origin: bottom center;
+      transform: rotate(0deg);
+    }
+
+    .Label {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .TickLabel {
+      position: absolute;
+      font-size: 10px;
+      color: #888;
+      transform: translate(-50%, -50%);
+    }
+
+    h1 {
+      color: #ffcc00;
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Internal Ticking Mechanism (ITM) Time</h1>
+
+  <div class="DialRow">
+    <div class="DialWrapper">
+      <div class="Dial" id="NTDial">
+        <div class="Hand" id="NTHand"></div>
+      </div>
+      <div class="Label" id="NTLabel">nT: 0</div>
+    </div>
+    <div class="DialWrapper">
+      <div class="Dial" id="RTDial">
+        <div class="Hand" id="RTHand"></div>
+      </div>
+      <div class="Label" id="RTLabel">rT: 0</div>
+    </div>
+    <div class="DialWrapper">
+      <div class="Dial" id="VTDial">
+        <div class="Hand" id="VTHand"></div>
+      </div>
+      <div class="Label" id="VTLabel">vT: 0</div>
+    </div>
+    <div class="DialWrapper">
+      <div class="Dial" id="STDial">
+        <div class="Hand" id="STHand"></div>
+      </div>
+      <div class="Label" id="STLabel">sT: 0</div>
+    </div>
+  </div>
+  <div class="Label" id="SecondsCounter" style="font-size: 20px; margin-top: 20px;">
+    seconds: 0
+  </div>  
+
+  <script>
+    const NT_DURATION = 0.02385;
+    const RT_DURATION = 5.5;
+    const VT_DURATION = 13.5;
+    const ST_DURATION = 2.1;
+
+    let StartTime = Date.now();
+
+    function AddTickLabels(DialId) {
+      const Dial = document.getElementById(DialId);
+
+      for (let i = 0; i < 60; i += 5) {
+        const Label = document.createElement('div');
+        Label.className = 'TickLabel';
+
+        const Number = i;
+        Label.textContent = Number === 60 ? 60 : Number;
+
+        const Angle = (i / 60) * 2 * Math.PI;
+
+        const Radius = 80;
+
+        const X = 90 + Radius * Math.sin(Angle);
+        const Y = 90 - Radius * Math.cos(Angle);
+
+        Label.style.left = `${X}px`;
+        Label.style.top = `${Y}px`;
+
+        Dial.appendChild(Label);
+      }
+    }
+
+    function UpdateClocks() {
+      const Now = Date.now();
+      const Elapsed = (Now - StartTime) / 1000;
+
+      UpdateDial('NT', Elapsed, NT_DURATION);
+      UpdateDial('RT', Elapsed, RT_DURATION);
+      UpdateDial('VT', Elapsed, VT_DURATION);
+      UpdateDial('ST', Elapsed, ST_DURATION);
+
+      document.getElementById('SecondsCounter').textContent = `seconds: ${Math.floor(Elapsed)}`;
+    }
+
+    function UpdateDial(Label, Elapsed, Duration) {
+      const Ticks = Math.floor(Elapsed / Duration);
+      const Progress = (Elapsed % Duration) / Duration;
+      const Angle = Progress * 360;
+
+      document.getElementById(`${Label}Hand`).style.transform = `rotate(${Angle}deg)`;
+      document.getElementById(`${Label}Label`).textContent = `${Label}: ${Ticks}`;
+    }
+
+    ['NTDial', 'RTDial', 'VTDial', 'STDial'].forEach(AddTickLabels);
+
+    setInterval(UpdateClocks, 50);
+  </script>
+
+</body>
+</html>
